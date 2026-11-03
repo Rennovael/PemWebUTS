@@ -1,0 +1,2 @@
+<?php if(!isset($_SESSION['csrf']))$_SESSION['csrf']=bin2hex(random_bytes(32)); ?>
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Inventaris MVC</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="layout"><aside><h2>📦 Inventaris</h2><a href="index.php?module=barang">Data Barang</a><a href="index.php?module=kategori">Kategori</a></aside><main><header><h1>Inventaris Barang</h1><p>Pengelolaan barang dan kategori</p></header>
