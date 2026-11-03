@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS inventaris_mvc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE inventaris_mvc;
+CREATE TABLE IF NOT EXISTS kategori (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ nama VARCHAR(100) NOT NULL UNIQUE
+);
+CREATE TABLE IF NOT EXISTS barang (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ kategori_id INT NOT NULL,
+ nama VARCHAR(150) NOT NULL,
+ harga DECIMAL(12,2) NOT NULL DEFAULT 0,
+ stok INT NOT NULL DEFAULT 0,
+ CONSTRAINT fk_barang_kategori FOREIGN KEY (kategori_id) REFERENCES kategori(id)
+ ON UPDATE CASCADE ON DELETE RESTRICT
+);
+INSERT IGNORE INTO kategori(nama) VALUES ('Elektronik'),('Alat Tulis'),('Aksesoris');
